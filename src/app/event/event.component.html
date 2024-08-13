@@ -1,0 +1,23 @@
+<div mat-dialog-title class="mat-dialog-title">
+  <div>{{ event.title }}</div>
+  <button mat-icon-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<mat-dialog-content>
+  <div class="event-modal-content">
+    <p><strong>Date:</strong> {{ event.startTime | date : "fullDate" }}</p>
+    <p>
+      <strong>Time:</strong> {{ event.startTime | date : "shortTime" }} -
+      {{ event.endTime | date : "shortTime" }}
+    </p>
+    <strong>Description: </strong>
+    <span>{{ event.description || " No description provided." }}</span>
+  </div>
+
+  <div class="event-modal-actions">
+    <button mat-dialog-close mat-button color="warn" (click)="deleteEvent()">
+      Delete
+    </button>
+  </div>
+</mat-dialog-content>

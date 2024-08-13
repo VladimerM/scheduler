@@ -1,0 +1,44 @@
+<div class="calendar-container">
+  <div class="calendar-header">
+    <button mat-icon-button (click)="previousWeek()">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <div class="day-header" *ngFor="let day of days">
+      {{ day | date : "fullDate" }}
+    </div>
+    <button mat-icon-button (click)="nextWeek()">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+  <div class="calendar">
+    <ng-container *ngFor="let dayIndex of calendar; let i = index">
+      <div
+        class="day"
+        cdkDropList
+        [cdkDropListData]="calendar[i]"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <ng-container *ngFor="let hour of calendar[i]; let j = index">
+          <div class="hour">
+            <div class="hour-label">
+              {{ hours[j] | date : "HH:mm" }}
+            </div>
+            <div class="events" (click)="addEvent(days[i], hours[j])" cdkDrag>
+              <ng-container>
+                @for (event of hour; track event) {
+                <div
+                  *ngIf="event"
+                  class="event"
+                  (click)="openEvent(event); $event.stopPropagation()"
+                >
+                  {{ event.title }}
+                </div>
+                }
+              </ng-container>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+</div>

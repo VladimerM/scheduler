@@ -1,0 +1,11 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar .calendar {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1rem;
+}

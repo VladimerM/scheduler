@@ -1,0 +1,51 @@
+.calendar-container {
+  padding: 15px;
+  border: 1px solid grey;
+  border-radius: 12px;
+}
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 150px);
+  flex-wrap: wrap;
+  height: 600px;
+  overflow: auto;
+  position: relative;
+  padding: 0 48px;
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: 48px repeat(7, 150px) 48px;
+}
+
+.day {
+  flex: 0 0 150px;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.day-header {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  height: 40px;
+  position: sticky;
+}
+
+.events {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+
+  .event {
+    background-color: skyblue;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 8px;
+  }
+}

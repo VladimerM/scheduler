@@ -1,0 +1,34 @@
+.event-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.event-modal-content {
+  padding: 1rem;
+}
+
+.event-modal-actions {
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: flex-end;
+}
+
+button[mat-icon-button] {
+  color: #555;
+}
+
+.mat-dialog-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  div {
+    padding: 5px 0;
+  }
+  &::before {
+    display: none;
+  }
+}
